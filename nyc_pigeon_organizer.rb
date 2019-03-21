@@ -1,17 +1,15 @@
-pigeon_data = {
-  :color => {
-    :purple => ["Theo", "Peter Jr.", "Lucky"],
-    :grey => ["Theo", "Peter Jr.", "Ms. K"],
-    :white => ["Queenie", "Andrew", "Ms. K", "Alex"],
-    :brown => ["Queenie", "Alex"]
-  },
-  :gender => {
-    :male => ["Alex", "Theo", "Peter Jr.", "Andrew", "Lucky"],
-    :female => ["Queenie", "Ms. K"]
-  },
-  :lives => {
-    "Subway" => ["Theo", "Queenie"],
-    "Central Park" => ["Alex", "Ms. K", "Lucky"],
-    "Library" => ["Peter Jr."],
-    "City Hall" => ["Andrew"]
-  }
+def nyc_pigeon_organizer(data)
+  p_hash = {}
+  data.each do |attr, v_hash|
+    p "attributes: #{attr}"
+    v_hash.each do |sym, names|
+      p "properties: #{sym}"
+      names.each do |name|
+        p_hash[name] ||= {}
+        p_hash[name][attr] ||= []
+        p_hash[name][attr] << sym.to_s
+      end
+    end
+   end
+p_hash
+end
