@@ -13,7 +13,7 @@ def nyc_pigeon_organizer(data)
         pigeon_list[pigeon][hash] || pigeon_list[pigeon][hash] = []
         #either has hash key of pertaining vals (which will then overwrite accordingly), ""
         pigeon_list[pigeon][hash] << key.to_s
-        #adds symbols as values into newfound array
+        #adds symbols as string into newfound array
       end
     end
   end
